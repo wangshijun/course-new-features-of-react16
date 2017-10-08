@@ -23,6 +23,8 @@ module.exports = {
     'no-mixed-operators': 'off',
     'no-use-before-define': 'off',
     'no-unused-expressions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'max-len': ['warn', 120],
     'no-param-reassign': ['error', { props: false }],
     camelcase: 'off',
@@ -46,5 +48,7 @@ module.exports = {
     tracker: true,
     constants: true,
     navigator: true,
+    document: true,
+    window: true,
   },
 };
