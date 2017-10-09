@@ -45,7 +45,13 @@ class App extends Component {
 
   selectCity(e) {
     const newValue = e.target.value;
-    this.setState({ city: newValue });
+    this.setState((state) => {
+      if (state.city === newValue) {
+        return null;
+      }
+
+      return { city: newValue };
+    });
   }
 
   render() {
