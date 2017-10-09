@@ -51,10 +51,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button type="button" value="London" onClick={this.selectCity.bind(this)}>
+        <button value="London" onClick={this.selectCity.bind(this)}>
           London
         </button>
-        <button type="button" value="New York" onClick={this.selectCity.bind(this)}>
+        <button value="New York" onClick={this.selectCity.bind(this)}>
           New York
         </button>
         <CityMap city={this.state.city} />
