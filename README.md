@@ -16,25 +16,37 @@
 
 为了解决未捕获错误阻塞整个应用的问题，`React 16` 中引入了 `Error Boundary` 的概念，`Error Boundary` 指能够捕获其所有子组件的错误并对错误做优雅处理的组件，这种优雅错误处理包括上报错误日志、展示出错提示而不是卸载整个组件树。我们在本小节中会展示如何创建 `Error Boundary` 组件，并使用 `componentDidCatch` 生命周期方法来处理捕获到的错误，此外还会展示 `Error Boundary` 使用的最佳实践。
 
+[![](./assets/01-use-error-boundary-to-handle-errors.png)](https://v.qq.com/iframe/player.html?vid=q1326uifstk&width=660&height=371.25&auto=0)
+
 ### 2. 在 `render` 中返回没有容器元素的多个元素
 
 在 `React 16` 之前，`render` 方法必须返回单个元素，而 `React 16` 中我们可以在 `render` 方法中返回多个节点，即节点数组，该特性能给开发打来很大的便利，也给组件结构设计带来了新的可能，本节会实例展示有哪些新可能。
+
+[![](./assets/02-render-multiple-elements-without-wrapper.png)](https://v.qq.com/iframe/player.html?vid=l132605ipl5&width=660&height=371.25&auto=0)
 
 ### 3. 用 `Text Only Component` 减少 `DOM` 层级
 
 `React 16` 之前的版本要求只渲染字符串的组件必须把字符串包在无意义的 `<span>` 或 `<div>` 中，而在 React 16 中这种限制已经去掉，也就意味着你可以在组件的 `render` 方法中直接返回字符串，创建 `Text Only Component`，这样会帮我们精简 `DOM` 层级。
 
+[![](./assets/03-text-only-components.png)](https://v.qq.com/iframe/player.html?vid=z13261v2txv&width=660&height=371.25&auto=0)
+
 ### 4. 用 `createPortal` 把组件渲染到当前组件树之外
 
 默认情况下，`React组件树` 是和 `DOM树` 完全对应的，但是这样会给部分 UI 组件带来限制，比如常见的蒙层、进度条，`React 16` 为我们提供的 `portal` 特性能够让我们把组件树的部分渲染到当前组件树之外，本节会基于 `portal` 机制从零开始构建最小可用的 `<Overlay/>` 组件，让大家理解怎么用，有什么最佳实践。
+
+[![](./assets/04-use-portal-to-render-outside-component-tree.png)](https://v.qq.com/iframe/player.html?vid=l1326ozhr2n&width=660&height=371.25&auto=0)
 
 ### 5. 更加自由的 `DOM` 属性
 
 `React 16` 对 `DOM` 组件的属性也做了不少增强，最让人兴奋的就是对自定义属性的宽容。本节会用实例演示哪些 `DOM` 属性会被直接渲染，哪些会被忽略，哪些写法是有效的，哪些写法是无效的，避免你在开发过程中踩坑。
 
+[![](./assets/05-dom-attribute-enhancements.png)](https://v.qq.com/iframe/player.html?vid=y1326osjdab&width=660&height=371.25&auto=0)
+
 ### 6. 在 `setState` 时用 `null` 避免不必要的渲染
 
 有时候我们需要通过函数来判断组件状态更新是否触发重新渲染，在 `React 16` 中，我们可以通过调用 `setState` 时传入 `null` 来避免组件重新渲染，这也就意味着，我们可以在 `setState` 方法内部决定我们的状态是否需要更新，本节会实例演示如何利用该特性解决城市地图应用中重复城市选择导致的重复渲染问题。
+
+[![](./assets/06-avoid-updates-on-setstate.png)](https://v.qq.com/iframe/player.html?vid=m13260pp2at&width=660&height=371.25&auto=0)
 
 ## 源码链接
 
@@ -74,5 +86,4 @@ yarn start
 
 关注《前端周刊》微信公众号，回复 `course-react16` 后获取高清视频教程下载地址。
 
-![cover.png](./cover.png)
-
+![cover.png](./assets/cover.png)
