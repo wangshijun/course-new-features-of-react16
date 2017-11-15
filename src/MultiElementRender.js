@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const Fruits = () => [
   <li key="1">Pear</li>,
-  <li key="2">Weater Melon</li>,
+  <li key="2">Water Melon</li>,
 ];
 
 class App extends Component {
